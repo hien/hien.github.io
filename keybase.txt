@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/hien
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://hien.info
+  * I am hien (https://keybase.io/hien) on keybase.
+  * I have a public key ASBJ-yvlnLEdTx2OaS48VyT9P_Al_0_wOtDwMrx4MajvkQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012049fb2be59cb11d4f1d8e692e3c5724fd3ff025ff4ff03ad0f032bc7831a8ef910a",
+      "host": "keybase.io",
+      "kid": "012049fb2be59cb11d4f1d8e692e3c5724fd3ff025ff4ff03ad0f032bc7831a8ef910a",
+      "uid": "b8d159afb5cad34830a6c9e2d4ea2719",
+      "username": "hien"
+    },
+    "merkle_root": {
+      "ctime": 1545317412,
+      "hash": "dffcd92e923a287eda8cb118133175083d8024a7fb60695128945416af637321e4103dd43b6871409fe0ee2f58eacfe215b3b6568a3eae57211b47d2e4bd54c7",
+      "hash_meta": "92d53ae06ff8776b018db520cfc8ae761ffd889e92fd2a06b01b9ba35a64b08e",
+      "seqno": 4175107
+    },
+    "service": {
+      "entropy": "5+rQ8WpE+7IboDgjenODb6Is",
+      "hostname": "hien.info",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.12.2"
+  },
+  "ctime": 1545317420,
+  "expire_in": 504576000,
+  "prev": "56a943c88ccfb5557244dd9d510910cc5aebb0a697add4875de538935cf5d9bf",
+  "seqno": 10,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgSfsr5ZyxHU8djmkuPFck/T/wJf9P8DrQ8DK8eDGo75EKp3BheWxvYWTESpcCCsQgVqlDyIzPtVVyRN2dUQkQzFrrsKaXrdSHXeU4k1z12b/EIN0TyNWGJ2yNnN07IO2sk6n8XdqQExg5WSx7tbs9PYckAgHCo3NpZ8RArI6jIHXPDKsoHqongpKnBZkpnMhYUOkhAc2LOs1vIL7KjpxbqzzEIq7Ut6lk2DDtyBJ+SxuyHuvJzUelsGuUBKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJVSM1XR6hc55PaDdSlHrIb1MDY5Bw608wfJR1I0DRGGo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/hien
+
+==================================================================
