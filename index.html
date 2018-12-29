@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<meta charset="utf-8">
 	<title>Hien Phan&#x27;s Homepage</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Hien Phan" />
@@ -11,6 +12,7 @@
 	<link rel="canonical" href="https://hien.info/" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
 	<meta name="referrer" content="no-referrer-when-downgrade" />
 	<meta property="og:title" content="Hien Phan&#x27;s  Homepage" />
 	<meta property="og:description" content="Hien Phan's  Homepage" />
@@ -54,20 +56,15 @@
 </head>
 
 <body>
-	<div class="container-fluid">
+	<div id="profile" class="container-fluid">
 		<main>
 			<article>
 				<div class="text-center">
-					<img class="shadow-sm rounded-circle" src="/img/hien_avatar.jpg?v=1.0" alt="Hien Phan's avatar" title="Hien Phan in Sapa">
-					<h1>Hien Phan</h1>
-					<p class="text-monospace">Just another systems engineer</p>
+					<img class="shadow-sm rounded-circle" :src="avatarImage.link" :alt="avatarImage.alt" :title="avatarImage.title">
+					<h1>{{ fullName }}</h1>
+					<p class="text-monospace">{{ role }}</p>
 					<ul class="nav justify-content-center">
-						<li class="nav-item "><a class="nav-link" href="//blog.hien.info/" title="Hien Phan's Blog, mostly about tech"><span style="font-size: 1.8rem;"><i class="fas fa-blog"></i></span></a>
-						</li>
-						<li class="nav-item"><a class="nav-link" href="//github.com/hien" title="Hien Phan's Github Repo" rel="nofollow" target="_blank"><span style="font-size: 1.8rem;"><i class="fab fa-github"></i></span></a>
-						</li>
-						<li class="nav-item"><a class="nav-link" href="//keybase.io/hien" title="Hien Phan's Keybase Profile" rel="nofollow" target="_blank"><span style="font-size: 1.8rem;"><i class="fab fa-keybase"></i></span></a>
-						</li>
+						<li v-for="link in link_data" class="nav-item "><a class="nav-link" :href="link.href" :title="link.title"><span style="font-size: 1.8rem;"><i :class="link.icon"></i></span></a></li>			
 					</ul>
 					<p>🤗<em>Thanks for visiting my homepage!</em>
 					</p>
@@ -75,9 +72,30 @@
 			<div>
 		</main>
 		</div>
+		<script>
+				new Vue({
+				  el: '#profile',
+				  data: {
+					fullName: 'Hien Phan',
+					role : 'Just another systems engineer',
+					avatarImage: {link: "/img/hien_avatar.jpg?v=1.0", alt:"Hien Phan's avatar", title:"Hien Phan in Sapa"},
+					link_data: [
+						{title: "Hien Phan's Blog, mostly about tech",
+						icon: "fas fa-blog",
+						href : "//blog.hien.info/"},
+						{title: "Hien Phan's Github Repo",
+						icon: "fab fa-github",
+						href : "//github.com/hien"},
+						{title: "Hien Phan's Keybase Profile",
+						icon: "fab fa-keybase",
+						href : "//keybase.io/hien"},
+						
+					],
+				  }
+				});
+		</script>
+</body>
 		<!-- 
 LS0tLS1CRUdJTiBQR1AgTUVTU0FHRS0tLS0tCkNvbW1lbnQ6IGh0dHBzOi8va2V5YmFzZS5pby9kb3dubG9hZApWZXJzaW9uOiBLZXliYXNlIEdvIDIuMTIuMiAoZGFyd2luKQoKeEEwREFBb0J0MmlUN2FWZEJwb0J5K0YwQU9JQUFBQUE1Vmx2ZFNCallXNGdZMkZzYkNCdFpTQmhkQ0FyT0RRNQpOek0wTkRFMU9Ea3VBTUxCWEFRQUFRb0FFQVVDWEJ4eFdRa1F0MmlUN2FWZEJwb0FBQTF4RUFBaURmVWRWK0h0CnVsRWlPajh4ak0yT3BvUDJJSUYza09BMzZTeXZIeE1NTXNINEE3R2VjQlNHbEd4QUpGQlF4S2NjbmN0cTVEL3UKdlp2SkFJdDYwUXVEb3RhcDAzSnRpaFM3Rk9lemVxYklLMnVrNWplZDdBRTZHTmRHd0tMZjBEUTUySVhpdXlFKwpTZnNacHltSjJiWmR2dzk4RnNjS24zZGFWTENYN3RXY2FucFJQR2x4WkVSaGhCYnMrM2xsMWVQdUNXa2dscmt6CkZwV3cxY0kyR1pjb1F1VitQVzNBdEVwemE3bW5JQk15ajlCQjFtTUR6MkVUL1RTUGhuZmxESlRMWHdFR3l5S0kKQ2w0c0RYUGxYNlIzRUdkcW5NeWFUTDI2SG92TUZPM1owcWJRcTIxUU90WlVJc2NJNlNVQTNtejcwRWMzdDFhMQpId2xzMlpSSlVGZmIvTmErall2UVloNzMrcjNxNEhJZG54T01DUkxLQkhFY29PM1N5dHdEdks2b3hvQjdGZTVMCnd2WEl1UEdqSmgwUElFbnZHTUNnUW9tcmNycUtLRWRZbHd4UWVNVTNkY21GaFRrWmp0ZVNQQXRQL3R1NmZDTDYKRk1iM1czQjhCbVNCZnRHSnY3NW4xVzhVb2JxZ0gvTExTQzlCb01yN0hpWjd4SkN1MFlEMHgyOS9jWW5ONjVxVAo0di9tcCs1N1c3VzA0b2o3bEUxNDZsaVFIaGNJTSsyMW5MckwwWmpvaDh0L0dkUmtlTUlVdU93R1o5Ym5FZzhHCktyakh2YnB4bHBlVi82emd2NnBsWEYyYkQ0b3RCVkYydDhKU0lMcjlJZzlBaDNRVEQvVEZ6T0tSUWZIQlJuRFgKaGdWR0RSVzQ3TEtYV2ZBYjVQZ3hkdVd6aitkT2VvMitIZz09Cj1EWHZMCi0tLS0tRU5EIFBHUCBNRVNTQUdFLS0tLS0=
 -->
-</body>
-
 </html>
