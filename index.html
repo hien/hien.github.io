@@ -64,7 +64,7 @@
 					<h1>{{ fullName }}</h1>
 					<p class="text-monospace">{{ role }}</p>
 					<ul class="nav justify-content-center">
-						<li v-for="link in link_data" class="nav-item "><a class="nav-link" :href="link.href" :title="link.title"><span style="font-size: 1.8rem;"><i :class="link.icon"></i></span></a></li>			
+						<li v-for="link in linkData" class="nav-item "><a class="nav-link" :href="link.href" :title="link.title"><span style="font-size: 1.8rem;"><i :class="link.icon"></i></span></a></li>			
 					</ul>
 					<p>🤗<em>Thanks for visiting my homepage!</em>
 					</p>
@@ -79,7 +79,7 @@
 					fullName: 'Hien Phan',
 					role : 'Just another systems engineer',
 					avatarImage: {link: "/img/hien_avatar.jpg?v=1.0", alt:"Hien Phan's avatar", title:"Hien Phan in Sapa"},
-					link_data: [
+					linkData: [
 						{title: "Hien Phan's Blog, mostly about tech",
 						icon: "fas fa-blog",
 						href : "//blog.hien.info/"},
